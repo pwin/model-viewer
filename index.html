@@ -52,7 +52,7 @@
                         </label>
                         <button onClick="driver(document.querySelector('#datafile select').value)">Change File</button>
                         <label id="url">URL:
-                        <input  value="http://127.0.0.1/dot_files/DCAT_v2_summary.v2.dot"></input>
+                        <input  value="https://raw.githubusercontent.com/pwin/model-viewer/master/dot_files/DCAT_v2_summary.dot"></input>
                       </label>
                         <button onClick="load_url(document.querySelector('#url input').value)">Load URL</button>
                         <a href="./index.html">Home</a>
@@ -97,12 +97,7 @@ function makeCorsRequest(url) {
   // Response handlers.
   xhr.onload = function() {
     var text = xhr.responseText;
-    alert('just loading');
-    alert(text);
-    //document.getElementById('editor').innerText = text;
     editor.setValue(text);
-    //output.innerHTML = Viz(text, "svg");
-    //alert('Response from CORS request to ' + url + ': ' + text);
   };
   xhr.onerror = function() {
     alert('Woops, there was an error making the request.');
@@ -111,21 +106,29 @@ function makeCorsRequest(url) {
 }
 
   //some test URLs
-  var url1 = 'dot_files/';
+  var url1 = 'https://raw.githubusercontent.com/pwin/model-viewer/master/dot_files/';
   var url = 'simple1.dot';
 
 function driver(url){
-  //alert(url)
+  if(confirm("do you want to change the data source?")){
     var f = url1 + url;
     console.log(f)
   makeCorsRequest(f);
+  }
+  else {
+    return false
+  }
 }
 
 function load_url(url){
-  //alert(url)
-    var f =  url;
+  if(confirm("do you want to change the data source?")){
+    var f = url;
     console.log(f)
   makeCorsRequest(f);
+  }
+  else {
+    return false
+  }
 }
 
 makeCorsRequest(url1 + url);
