@@ -1,0 +1,137 @@
+<html>
+    <head>
+        <title>Dot Viewer</title>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" type="text/css" href="css/viz.js.css"/>
+        <script type="text/javascript" src="js/ace/ace.js"></script>
+        <script type="text/javascript" src="js/Split.js/split.min.js"></script>
+        <script type="text/javascript" src="js/fabric.js/fabric.min.js"></script>
+        <script type="text/javascript" src="js/svg-pan-zoom/svg-pan-zoom.min.js"></script>
+        <script type="text/javascript" src="js/viz.js/viz.js"></script>
+    </head>
+<body>
+      <div id="app">
+         <div id="panes" class="split split-horizontal">
+            <div id="editor" class="split">
+
+            </div>
+            <div id="graph" class="split">
+               <div id="options">
+                        <label id="engine">
+                     Viz:
+                     <select>
+                        <option>circo</option>
+                        <option selected="selected">dot</option>
+                        <option>fdp</option>
+                        <option>neato</option>
+                        <option>osage</option>
+                        <option>twopi</option>
+                            </select>
+                        </label>
+                        <label id="format">
+                     Fmt:
+                     <select>
+                        <option selected="selected">svg</option>
+                        <option>png-image-element</option>
+                        <option>json</option>
+                        <option>xdot</option>
+                        <option>plain</option>
+                        <option>ps</option>
+                            </select>
+                        </label>
+                        <label id="raw">
+                            <input type="checkbox"/>raw</label>
+                        <label id="datafile">
+                     Data:
+                     <select>
+                       <option value="DCAT_2014.dot">DCAT 2014</option>
+                        <option value="DCAT_v2_summary.dot">DCAT v2 Summary</option>
+                        <option value="DCAT_v2_showing_changes.dot">DCAT v2 Showing Changes</option>
+                        <option value="UCR_summary.dot">UCR Summary</option>
+                      </select>
+                        </label>
+                        <button onClick="driver(document.querySelector('#datafile select').value)">Change File</button>
+                        <label id="url">URL:
+                        <input  value="http://127.0.0.1/dot_files/DCAT_v2_summary.v2.dot"></input>
+                      </label>
+                        <button onClick="load_url(document.querySelector('#url input').value)">Load URL</button>
+                        <a href="./index.html">Home</a>
+                    </div>
+                    <div id="output">
+                  <div id="error"/>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script type="text/javascript" src="resources/viz.js.app.js"></script>
+      <script>
+      // Create the XHR object.
+function createCORSRequest(method, url) {
+  var xhr = new XMLHttpRequest();
+  if ("withCredentials" in xhr) {
+    //alert("with Credentials");
+    // XHR for Chrome/Firefox/Opera/Safari.
+    xhr.open(method, url, true);
+    xhr.setRequestHeader("Accept", "text/plain");
+  } else if (typeof XDomainRequest != "undefined") {
+    // XDomainRequest for IE.
+    xhr = new XDomainRequest();
+    //alert("Domain request");
+    xhr.open(method, url);
+  } else {
+    // CORS not supported.
+    xhr = null;
+  }
+  return xhr;
+}
+
+
+// Make the actual CORS request.
+function makeCorsRequest(url) {
+
+  var xhr = createCORSRequest('GET', url);
+  if (!xhr) {
+    alert('CORS not supported');
+    return;
+  }
+  // Response handlers.
+  xhr.onload = function() {
+    var text = xhr.responseText;
+    alert('just loading');
+    alert(text);
+    //document.getElementById('editor').innerText = text;
+    editor.setValue(text);
+    //output.innerHTML = Viz(text, "svg");
+    //alert('Response from CORS request to ' + url + ': ' + text);
+  };
+  xhr.onerror = function() {
+    alert('Woops, there was an error making the request.');
+  };
+  xhr.send();
+}
+
+  //some test URLs
+  var url1 = 'dot_files/';
+  var url = 'simple1.dot';
+
+function driver(url){
+  //alert(url)
+    var f = url1 + url;
+    console.log(f)
+  makeCorsRequest(f);
+}
+
+function load_url(url){
+  //alert(url)
+    var f =  url;
+    console.log(f)
+  makeCorsRequest(f);
+}
+
+makeCorsRequest(url1 + url);
+updateGraph();
+
+
+</script>
+</body>
+</html>

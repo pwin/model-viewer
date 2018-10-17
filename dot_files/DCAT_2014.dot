@@ -1,0 +1,70 @@
+digraph DCAT_2014_summary{
+ratio = "auto"
+
+node [
+fontname = Helvetica
+fontsize = 8
+shape = "record"
+]
+
+edge [
+arrowtail = "empty"
+arrowhead = "vee"
+fontsize=8
+fontcolor=red
+fontname=Helvetica
+]
+
+
+foafAgent[
+label = "{foaf:Agent}"
+]
+
+dcatCatalog [
+label = "{dcat:Catalog|+ dct:title\l+ dct:description\l+ dct:issued\l+ dct:modified\l+ dct:language\l+ dct:license\l+ dct:rights\l+ dct:spatial\l+ foaf:homepage}"
+]
+
+dcatCatalogRecord [
+label = "{dcat:CatalogRecord|+ dct:description\l+ dct:issued\l+ dct:modified\l+ dct:title}"
+]
+
+dcatDataset [
+label = "{dcat:Dataset|+ dct:accrualPeriodicity\l+ dct:spatial\l+ dct:temporal\l+ dcat:contactPoint\l+ dcat:keyword\l+ dct:description\l+ dct:identifier\l+ dct:issued\l+ dct:language\l+ dct:modified\l+ dct:title\l+ dcat:landingPage}"
+]
+
+dcatDistribution [
+label="{dcat:Distribution|+ dcat:accessURL\l+ dcat:byteSize\l+ dcat:downloadURL\l+ dcat:mediaType\l
++ dct:description\l+ dct:format\l+ dct:issued\l+ dct:license\l+ dct:modified\l+ dct:rights\l+ dct:title}"
+]
+
+
+skosConceptScheme [
+label="{skos:ConceptScheme}"
+]
+
+skosConcept [
+label="{skos:Concept}"
+]
+
+dctypeDataset [
+label="{dctype:Dataset}"
+]
+
+edge [arrowhead="vee"]
+skosConcept -> skosConceptScheme [label="skos:inScheme"]
+
+dcatCatalog -> foafAgent [label="dct:publisher"]
+dcatCatalog -> dcatCatalogRecord [label="dct:record"]
+dcatCatalog -> dcatDataset [label="dcat:dataset"]
+dcatCatalog -> skosConceptScheme [label="dcat:themeTaxonomy"]
+
+dcatCatalogRecord -> dcatDataset [label="foaf:primaryTopic"]
+
+dcatDataset -> foafAgent [label="dct:publisher"]
+dcatDataset -> dcatDistribution [label="dcat:distribution"]
+dcatDataset -> skosConcept [label="dcat:theme"]
+
+edge [arrowhead="o"]
+dcatDataset -> dctypeDataset
+
+}

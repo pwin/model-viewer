@@ -1,0 +1,101 @@
+digraph DCAT_v2_summary{
+label="DCAT version 2, showing the changes"
+ratio = "auto"
+
+node [
+fontname = Helvetica
+fontsize = 8
+shape = "record"
+]
+
+edge [
+arrowtail = "empty"
+arrowhead = "vee"
+fontsize=8
+fontcolor=red
+fontname=Helvetica
+]
+
+
+foafAgent[
+label = <{foaf:Agent}>
+]
+
+dcatCatalog [href="https://rawgit.com/w3c/dxwg/dcat-2pwd-internal-review/dcat/index.html#Class:Catalog",
+label = <{dcat:Catalog|+ dct:license<BR/>+ dct:rights<BR/>+ foaf:homepage<BR/><BR/><I>::dcat:Dataset</I><BR/>+ dct:accrualPeriodicity<BR/>+ dct:spatial<BR/>+ dct:temporal<BR/>+ prov:wasGeneratedBy<BR/><BR/><I>::dcat:Resource</I><BR/><FONT COLOR="orange">+ dcat:contactPoint</FONT><BR/><FONT COLOR="orange">+ dcat:keyword</FONT><BR/><FONT COLOR="orange">+ dcat:landingPage</FONT><BR/>+ dct:conformsTo<BR/>+ dct:creator<BR/>+ dct:description<BR/>+ dct:identifier<BR/>+ dct:issued<BR/>+ dct:language<BR/>+ dct:modified<BR/>+ dct:relation<BR/>+ dct:title<BR/><FONT COLOR="green">+ dct:type</FONT>}>
+]
+
+dcatCatalogRecord [href="https://rawgit.com/w3c/dxwg/dcat-2pwd-internal-review/dcat/index.html#Class:Catalog_Record",
+label = <{dcat:CatalogRecord|+ dct:description<BR/>+ dct:issued<BR/>+ dct:modified<BR/>+ dct:title}>
+]
+
+dcatDataset [href="https://rawgit.com/w3c/dxwg/dcat-2pwd-internal-review/dcat/index.html#Class:Dataset",
+label = <{dcat:Dataset|+ dct:accrualPeriodicity<BR/>+ dct:spatial<BR/>+ dct:temporal<BR/><FONT COLOR="green">+ prov:wasGeneratedBy</FONT><BR/><BR/><I>::dcat:Resource</I><BR/><FONT COLOR="orange">+ dcat:contactPoint</FONT><BR/><FONT COLOR="orange">+ dcat:keyword</FONT><BR/><FONT COLOR="orange">+ dcat:landingPage</FONT><BR/>+ dct:conformsTo<BR/><FONT COLOR="green">+ dct:creator</FONT><BR/>+ dct:description<BR/>+ dct:identifier<BR/>+ dct:issued<BR/>+ dct:language<BR/>+ dct:modified<BR/>+ dct:relation<BR/>+ dct:title<BR/><FONT COLOR="green">+ dct:type</FONT>}>
+]
+
+dcatDataService [href="https://rawgit.com/w3c/dxwg/dcat-2pwd-internal-review/dcat/index.html#Class:Data_Service",
+label = <{<FONT COLOR="green">dcat:DataService</FONT>|+ dcat:endpointDescription<BR/>+ dcat:endpointURL<BR/>+ dct:accessRights<BR/>+ dct:license<BR/><BR/><I>::dcat:Resource</I><BR/><FONT COLOR="orange">+ dcat:contactPoint</FONT><BR/><FONT COLOR="orange">+ dcat:keyword</FONT><BR/><FONT COLOR="orange">+ dcat:landingPage</FONT><BR/>+ dct:conformsTo<BR/>+ dct:creator<BR/>+ dct:description<BR/>+ dct:identifier<BR/>+ dct:issued<BR/>+ dct:language<BR/>+ dct:modified<BR/>+ dct:relation<BR/>+ dct:title<BR/><FONT COLOR="green">+ dct:type</FONT>}>
+]
+
+dcatResource [href="https://rawgit.com/w3c/dxwg/dcat-2pwd-internal-review/dcat/index.html#Class:Resource",
+	label = <{<FONT COLOR="green">dcat:Resource</FONT>|+ dcat:contactPoint<BR/><FONT COLOR="orange">+ dcat:keyword</FONT><BR/><FONT COLOR="orange">+ dcat:landingPage</FONT><BR/><FONT COLOR="green">+ dct:conformsTo</FONT><BR/>+ dct:creator<BR/>+ dct:description<BR/>+ dct:identifier<BR/>+ dct:issued<BR/>+ dct:language<BR/>+ dct:modified<BR/><FONT COLOR="green">+ dct:relation</FONT><BR/>+ dct:title<BR/><FONT COLOR="green">+ dct:type</FONT>}>
+]
+
+dcatDistribution [href="https://rawgit.com/w3c/dxwg/dcat-2pwd-internal-review/dcat/index.html#Class:Distribution",
+	label = <{<FONT COLOR="orange">dcat:Distribution</FONT>|+ dcat:accessURL<BR/>+ dcat:byteSize<BR/>+ dcat:downloadURL<BR/><FONT COLOR="orange">+ dcat:mediaType</FONT><BR/>
+	+ dct:conformsTo<BR/>+ dct:description<BR/>+ dct:format<BR/>+ dct:issued<BR/>+ dct:license<BR/>+ dct:modified<BR/>+ dct:rights<BR/>+ dct:title}>
+]
+
+dcatDataDistributionService [href="https://rawgit.com/w3c/dxwg/dcat-2pwd-internal-review/dcat/index.html#Class:Data_Distribution_Service",
+	label = <{<FONT COLOR="green">dcat:DistributionService</FONT>}>
+]
+
+dcatDiscoveryService [href="https://rawgit.com/w3c/dxwg/dcat-2pwd-internal-review/dcat/index.html#Class:Discovery_Service",
+	label=<{<FONT COLOR="green">dcat:DiscoveryService</FONT>}>
+]
+
+
+skosConceptScheme [
+	label = <{skos:ConceptScheme}>
+]
+
+skosConcept [
+	label = <{skos:Concept}>
+]
+
+
+dcatCatalog -> foafAgent [label="dct:publisher"]
+edge [headlabel = "1..*"]
+dcatCatalog -> dcatCatalogRecord [label="dct:record"]
+edge [headlabel = "0..*"]
+dcatCatalog -> dcatCatalog [label="dcat:catalog"]
+dcatCatalog -> dcatDataset [label="dcat:dataset"]
+edge [arrowhead = "o" headlabel=""]
+dcatCatalog -> dcatDataset
+edge [arrowhead="vee"]
+dcatDataset -> dcatDataset [label="prov:wasDerivedFrom"]
+dcatCatalogRecord -> foafAgent [label="dct:contributor"]
+dcatCatalog -> skosConceptScheme [label="dcat:themeTaxonomy"]
+skosConcept -> skosConceptScheme [label="skos:inScheme"]
+edge [headlabel = "1..*"]
+dcatCatalog -> dcatResource [label="dct:hasPart"]
+edge [headlabel = "0..*"]
+dcatResource -> skosConcept [label="dcat:theme" color="orange" fontcolor="orange"]
+dcatCatalog -> dcatDataService [label="dcat:service"]
+edge [headlabel=""]
+dcatResource ->	foafAgent [label="prov:wasAttributedTo"]
+dcatResource ->	foafAgent [label="dct:publisher"]
+d1 [shape=point,width=0.01,height=0.01]
+{dcatDataset, dcatDataService} -> d1 [dir="none"]
+edge [arrowhead = "o" headlabel=""]
+ 	d1 -> dcatResource
+edge [arrowhead="vee" headlabel="0..*"]
+dcatDataset -> dcatDistribution [label="dcat:distribution"]
+dcatDistribution -> dcatDataDistributionService [label="dcat:accessService"]
+edge [arrowhead="vee" headlabel="1..*"]
+dcatDataDistributionService -> dcatDataset [label="dcat:servesDataset"]
+edge [arrowhead = "o" headlabel=""]
+dcatDataDistributionService -> dcatDataService
+dcatDiscoveryService -> dcatDataDistributionService
+
+}

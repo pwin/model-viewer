@@ -1,0 +1,289 @@
+digraph UCR_summary{
+
+fontname="Helvetica";
+label = "Graph of the Use Cases, derived requirements and requirements groups - https://w3c.github.io/dxwg/ucr/";
+labelloc = "t";
+ratio = "auto"
+rankdir = LR;
+
+node [
+fontname = Helvetica
+fontsize = 8
+shape = "record"
+]
+
+edge [
+arrowtail = "empty"
+arrowhead = "vee"
+fontsize=8
+fontcolor=red
+fontname=Helvetica
+]
+subgraph requirementsGroups {
+		node [style=filled,color=lightblue];
+    "6.1"; "6.2"; "6.3"; "6.4"; "6.5"; "6.6"; "6.7"; "6.8"; "6.9"; "6.10";
+    label="Requirements Groups";
+}
+
+subgraph useCases {
+    node [style=filled,color=lightyellow];
+    "5.1";  "5.2";  "5.3";  "5.4";  "5.5";  "5.6";  "5.7";  "5.8";  "5.9";  "5.10";  "5.11";  "5.12";  "5.13";  "5.14";  "5.15";  "5.16";  "5.17";  "5.18";  "5.19";  "5.20";  "5.21";  "5.22";  "5.23";  "5.24";  "5.25";  "5.26";  "5.27";  "5.28";  "5.29";  "5.30";  "5.31";  "5.32";  "5.33";  "5.34";  "5.35";  "5.36";  "5.37";  "5.38";  "5.39";  "5.40";  "5.41";  "5.42";  "5.43";  "5.44";  "5.45";  "5.46";  "5.47";  "5.48";  "5.49";  "5.50"; "5.51";
+    label="Use Cases";
+}
+### Use Cases
+"5.1"[label = <{DCAT packaged distributions [ID1]}>,href="https://w3c.github.io/dxwg/ucr/#ID1"]
+"5.2"[label = <{Detailing and requesting additional constraints (profiles) beyond content types [ID2]}>,href="https://w3c.github.io/dxwg/ucr/#ID2"]
+"5.3"[label = <{Responses can conform to multiple, modular profiles [ID3]}>,href="https://w3c.github.io/dxwg/ucr/#ID3"]
+"5.4"[label = <{Dataset Versioning Information [ID4]}>,href="https://w3c.github.io/dxwg/ucr/#ID4"]
+"5.5"[label = <{Discover available content profiles [ID5]}>,href="https://w3c.github.io/dxwg/ucr/#ID5"]
+"5.6"[label = <{DCAT Distribution to describe web services [ID6]}>,href="https://w3c.github.io/dxwg/ucr/#ID6"]
+"5.7"[label = <{Support associating fine-grained semantics for datasets and resources within a dataset [ID7]}>,href="https://w3c.github.io/dxwg/ucr/#ID7"]
+"5.8"[label = <{Scope or type of dataset with a DCAT description [ID8]}>,href="https://w3c.github.io/dxwg/ucr/#ID8"]
+"5.9"[label = <{Common requirements for scientific data [ID9]}>,href="https://w3c.github.io/dxwg/ucr/#ID9"]
+"5.10"[label = <{Requirements for data citation [ID10]}>,href="https://w3c.github.io/dxwg/ucr/#ID10"]
+"5.11"[label = <{Modeling identifiers and making them actionable [ID11]}>,href="https://w3c.github.io/dxwg/ucr/#ID11"]
+"5.12"[label = <{Modeling data lineage [ID12]}>,href="https://w3c.github.io/dxwg/ucr/#ID12"]
+"5.13"[label = <{Modeling agent roles [ID13]}>,href="https://w3c.github.io/dxwg/ucr/#ID13"]
+"5.14"[label = <{Data quality modeling patterns [ID14]}>,href="https://w3c.github.io/dxwg/ucr/#ID14"]
+"5.15"[label = <{Modeling data precision and accuracy [ID15]}>,href="https://w3c.github.io/dxwg/ucr/#ID15"]
+"5.16"[label = <{Modeling conformance test results on data quality [ID16]}>,href="https://w3c.github.io/dxwg/ucr/#ID16"]
+"5.17"[label = <{Data access restrictions [ID17]}>,href="https://w3c.github.io/dxwg/ucr/#ID17"]
+"5.18"[label = <{Modeling service-based data access [ID18]}>,href="https://w3c.github.io/dxwg/ucr/#ID18"]
+"5.19"[label = <{Guidance on the use of qualified forms [ID19]}>,href="https://w3c.github.io/dxwg/ucr/#ID19"]
+"5.20"[label = <{Modelling resources different from datasets [ID20]}>,href="https://w3c.github.io/dxwg/ucr/#ID20"]
+"5.21"[label = <{Machine actionable link for a mapping client [ID21]}>,href="https://w3c.github.io/dxwg/ucr/#ID21"]
+"5.22"[label = <{Template link in metadata [ID22]}>,href="https://w3c.github.io/dxwg/ucr/#ID22"]
+"5.23"[label = <{Data Quality Vocabulary (DQV) Wish List left by the DWBP WG [ID23]}>,href="https://w3c.github.io/dxwg/ucr/#ID23"]
+"5.24"[label = <{Harmonising INSPIRE-obligations and DCAT-distribution [ID24]}>,href="https://w3c.github.io/dxwg/ucr/#ID24"]
+"5.25"[label = <{Publication of catalog information [ID25]}>,href="https://w3c.github.io/dxwg/ucr/#ID25"]
+"5.26"[label = <{Extension points to 3rd party vocabularies for modeling significant aspects of data exchange [ID26]}>,href="https://w3c.github.io/dxwg/ucr/#ID26"]
+"5.27"[label = <{Modeling temporal coverage [ID27]}>,href="https://w3c.github.io/dxwg/ucr/#ID27"]
+"5.28"[label = <{Modeling reference systems [ID28]}>,href="https://w3c.github.io/dxwg/ucr/#ID28"]
+"5.29"[label = <{Modeling spatial coverage [ID29]}>,href="https://w3c.github.io/dxwg/ucr/#ID29"]
+"5.30"[label = <{Standard APIs for metadata profile negotiation [ID30]}>,href="https://w3c.github.io/dxwg/ucr/#ID30"]
+"5.31"[label = <{Modeling funding sources [ID31]}>,href="https://w3c.github.io/dxwg/ucr/#ID31"]
+"5.32"[label = <{Relationships between Datasets [ID32]}>,href="https://w3c.github.io/dxwg/ucr/#ID32"]
+"5.33"[label = <{Summarization/Characterization of datasets [ID33]}>,href="https://w3c.github.io/dxwg/ucr/#ID33"]
+"5.34"[label = <{Relationships between Distributions of a Dataset [ID34]}>,href="https://w3c.github.io/dxwg/ucr/#ID34"]
+"5.35"[label = <{Datasets and catalogues [ID35]}>,href="https://w3c.github.io/dxwg/ucr/#ID35"]
+"5.36"[label = <{Cross-vocabulary relationships [ID36]}>,href="https://w3c.github.io/dxwg/ucr/#ID36"]
+"5.37"[label = <{Europeana profile ecosystem: representing, publishing and consuming application profiles of the Europeana Data Model (EDM) [ID37]}>,href="https://w3c.github.io/dxwg/ucr/#ID37"]
+"5.38"[label = <{Time-related aspects [ID38]}>,href="https://w3c.github.io/dxwg/ucr/#ID38"]
+"5.39"[label = <{DCAT Metadata profile integration [ID39]}>,href="https://w3c.github.io/dxwg/ucr/#ID39"]
+"5.40"[label = <{Discoverability by mainstream search engines [ID40]}>,href="https://w3c.github.io/dxwg/ucr/#ID40"]
+"5.41"[label = <{Vocabulary constraints [ID41]}>,href="https://w3c.github.io/dxwg/ucr/#ID41"]
+"5.42"[label = <{Metadata Guidance Rules [ID42]}>,href="https://w3c.github.io/dxwg/ucr/#ID42"]
+"5.43"[label = <{Description of dataset compliance with standards [ID43]}>,href="https://w3c.github.io/dxwg/ucr/#ID43"]
+"5.44"[label = <{Identification of versioned datasets and subsets [ID44]}>,href="https://w3c.github.io/dxwg/ucr/#ID44"]
+"5.45"[label = <{Annotating data quality [ID45]}>,href="https://w3c.github.io/dxwg/ucr/#ID45"]
+"5.46"[label = <{Profile support for input functions [ID46]}>,href="https://w3c.github.io/dxwg/ucr/#ID46"]
+"5.47"[label = <{Define update method [ID47]}>,href="https://w3c.github.io/dxwg/ucr/#ID47"]
+"5.48"[label = <{Profile relation to validation [ID48]}>,href="https://w3c.github.io/dxwg/ucr/#ID48"]
+"5.49"[label = <{Dataset business context [ID49]}>,href="https://w3c.github.io/dxwg/ucr/#ID49"]
+"5.50"[label = <{Annotating changes that do not change the information content [ID50]}>,href="https://w3c.github.io/dxwg/ucr/#ID50"]
+"5.51"[label = <{Describing distribution subsetting and container mechanism separately from form of individual items.[ID51]}>,href="https://w3c.github.io/dxwg/ucr/#ID51"]
+
+### Requirements
+"6.1"[label = <{Identification}>,href="https://w3c.github.io/dxwg/ucr/#IdentificationRequirements"]
+"6.1.1"[label = <{Dereferenceable identifiers [RDID]}>,href="https://w3c.github.io/dxwg/ucr/#RDID"]
+"6.1.2"[label = <{Identifier type [RIDT]}>,href="https://w3c.github.io/dxwg/ucr/#RIDT"]
+"6.1.3"[label = <{Primary and alternative identifier [RIDALT]}>,href="https://w3c.github.io/dxwg/ucr/#RIDALT"]
+"6.2"[label = <{Versioning}>,href="https://w3c.github.io/dxwg/ucr/#VersioningRequirements"]
+"6.2.1"[label = <{Version subject [RVSS]}>,href="https://w3c.github.io/dxwg/ucr/#RVSS"]
+"6.2.2"[label = <{Version definition [RVSDF]}>,href="https://w3c.github.io/dxwg/ucr/#RVSDF"]
+"6.2.3"[label = <{Version identifier [RVSID]}>,href="https://w3c.github.io/dxwg/ucr/#RVSID"]
+"6.2.4"[label = <{Version release date [RVSDT]}>,href="https://w3c.github.io/dxwg/ucr/#RVSDT"]
+"6.2.5"[label = <{Version delta [RVSDA]}>,href="https://w3c.github.io/dxwg/ucr/#RVSDA"]
+"6.3"[label = <{Qualitative information}>,href="https://w3c.github.io/dxwg/ucr/#QualitativeInformationRequirements"]
+"6.3.1"[label = <{Usage notes [RUN]}>,href="https://w3c.github.io/dxwg/ucr/#RUN"]
+"6.3.2"[label = <{Summary statistics [RSS]}>,href="https://w3c.github.io/dxwg/ucr/#RSS"]
+"6.3.3"[label = <{Provenance information [RPIF]}>,href="https://w3c.github.io/dxwg/ucr/#RPIF"]
+"6.3.4"[label = <{Funding source [RFS]}>,href="https://w3c.github.io/dxwg/ucr/#RFS"]
+"6.3.5"[label = <{Project context [RPCX]}>,href="https://w3c.github.io/dxwg/ucr/#RPCX"]
+"6.3.6"[label = <{Data quality model [RDQM]}>,href="https://w3c.github.io/dxwg/ucr/#RDQM"]
+"6.3.7"[label = <{Quality-related information [RDQIF]}>,href="https://w3c.github.io/dxwg/ucr/#RDQIF"]
+"6.4"[label = <{Formal description}>,href="https://w3c.github.io/dxwg/ucr/#FormalDescriptionRequirements"]
+"6.4.1"[label = <{Dataset type [RDST]}>,href="https://w3c.github.io/dxwg/ucr/#RDST"]
+"6.4.2"[label = <{Dataset aspects [RDSAT]}>,href="https://w3c.github.io/dxwg/ucr/#RDSAT"]
+"6.4.3"[label = <{Reference system [RRS]}>,href="https://w3c.github.io/dxwg/ucr/#RRS"]
+"6.4.4"[label = <{Spatial coverage [RSC]}>,href="https://w3c.github.io/dxwg/ucr/#RSC"]
+"6.4.5"[label = <{Temporal coverage [RTC]}>,href="https://w3c.github.io/dxwg/ucr/#RTC"]
+"6.5"[label = <{Distribution}>,href="https://w3c.github.io/dxwg/ucr/#DistributionRequirements"]
+"6.5.1"[label = <{Distribution definition [RDIDF]}>,href="https://w3c.github.io/dxwg/ucr/#RDIDF"]
+"6.5.2"[label = <{Distribution schema [RDIS]}>,href="https://w3c.github.io/dxwg/ucr/#RDIS"]
+"6.5.3"[label = <{Distribution service [RDISV]}>,href="https://w3c.github.io/dxwg/ucr/#RDISV"]
+"6.5.4"[label = <{Distribution container [RDIC]}>,href="https://w3c.github.io/dxwg/ucr/#RDIC"]
+"6.5.5"[label = <{Distribution package [RDIP]}>,href="https://w3c.github.io/dxwg/ucr/#RDIP"]
+"6.6"[label = <{Relationships}>,href="https://w3c.github.io/dxwg/ucr/#RelationshipsRequirements"]
+"6.6.1"[label = <{Related datasets [RRDS]}>,href="https://w3c.github.io/dxwg/ucr/#RRDS"]
+"6.6.2"[label = <{Project relation [RPR]}>,href="https://w3c.github.io/dxwg/ucr/#RPR"]
+"6.6.3"[label = <{Datasets vs. Catalog relation [RDSCR]}>,href="https://w3c.github.io/dxwg/ucr/#RDSCR"]
+"6.7"[label = <{Federation and citation}>,href="https://w3c.github.io/dxwg/ucr/#ID51"]
+"6.7.1"[label = <{Dataset access [RDSA]}>,href="https://w3c.github.io/dxwg/ucr/#RDSA"]
+"6.7.2"[label = <{Dataset citation [RDSC]}>,href="https://w3c.github.io/dxwg/ucr/#RDSC"]
+"6.7.3"[label = <{Dataset publications [RDSP]}>,href="https://w3c.github.io/dxwg/ucr/#RDSP"]
+"6.7.4"[label = <{Publication source [RPS]}>,href="https://w3c.github.io/dxwg/ucr/#RPS"]
+"6.7.5"[label = <{Publication control [RPC]}>,href="https://w3c.github.io/dxwg/ucr/#RPC"]
+"6.8"[label = <{Profile}>,href="https://w3c.github.io/dxwg/ucr/#ProfileRequirements"]
+"6.8.1"[label = <{Profile definition [RPFDF]}>,href="https://w3c.github.io/dxwg/ucr/#RPFDF"]
+"6.8.2"[label = <{Profile representation [RPFRP]}>,href="https://w3c.github.io/dxwg/ucr/#RPFRP"]
+"6.8.3"[label = <{Profile negotiation [RPFN]}>,href="https://w3c.github.io/dxwg/ucr/#RPFN"]
+"6.8.4"[label = <{Profiles listing [RPFL]}>,href="https://w3c.github.io/dxwg/ucr/#RPFL"]
+"6.9"[label = <{Alignment}>,href="https://w3c.github.io/dxwg/ucr/#AlignmentRequirements"]
+"6.9.1"[label = <{Related vocabularies comparision [RVC]}>,href="https://w3c.github.io/dxwg/ucr/#RVC"]
+"6.9.2"[label = <{Related vocabularies mapping [RVM]}>,href="https://w3c.github.io/dxwg/ucr/#RVM"]
+"6.9.3"[label = <{Entailment of schema.org [RES]}>,href="https://w3c.github.io/dxwg/ucr/#RES"]
+"6.10"[label = <{Meta-level and methodology}>,href="https://w3c.github.io/dxwg/ucr/#MetaRequirements"]
+"6.10.1"[label = <{Metadata guidance rules [RMDG]}>,href="https://w3c.github.io/dxwg/ucr/#RMDG"]
+"6.10.2"[label = <{Qualified forms [RQF]}>,href="https://w3c.github.io/dxwg/ucr/#RQF"]
+"6.10.3"[label = <{Mapping of qualified and non-qualified forms [RQFM]}>,href="https://w3c.github.io/dxwg/ucr/#RQFM"]
+
+###Github Issues
+"#53"[label = <{Github #53}>,href="https://github.com/w3c/dxwg/issues/53"]
+"#55"[label = <{Github #55}>,href="https://github.com/w3c/dxwg/issues/55"]
+"#56"[label = <{Github #56}>,href="https://github.com/w3c/dxwg/issues/56"]
+"#57"[label = <{Github #57}>,href="https://github.com/w3c/dxwg/issues/57"]
+"#58"[label = <{Github #58}>,href="https://github.com/w3c/dxwg/issues/58"]
+"#61"[label = <{Github #61}>,href="https://github.com/w3c/dxwg/issues/61"]
+"#64"[label = <{Github #64}>,href="https://github.com/w3c/dxwg/issues/64"]
+"#71"[label = <{Github #71}>,href="https://github.com/w3c/dxwg/issues/71"]
+"#95"[label = <{Github #95}>,href="https://github.com/w3c/dxwg/issues/95"]
+"#98"[label = <{Github #98}>,href="https://github.com/w3c/dxwg/issues/98"]
+"#116"[label = <{Github #116}>,href="https://github.com/w3c/dxwg/issues/116"]
+"#121"[label = <{Github #121}>,href="https://github.com/w3c/dxwg/issues/121"]
+"#122"[label = <{Github #122}>,href="https://github.com/w3c/dxwg/issues/122"]
+"#123"[label = <{Github #123}>,href="https://github.com/w3c/dxwg/issues/123"]
+"#127"[label = <{Github #127}>,href="https://github.com/w3c/dxwg/issues/127"]
+"#170"[label = <{Github #170}>,href="https://github.com/w3c/dxwg/issues/170"]
+"#172"[label = <{Github #172}>,href="https://github.com/w3c/dxwg/issues/172"]
+"#233"[label = <{Github #233}>,href="https://github.com/w3c/dxwg/issues/233"]
+"#253"[label = <{Github #253}>,href="https://github.com/w3c/dxwg/issues/253"]
+
+
+
+###DCAT Version 2
+"Property:datasetCreator"[label = <{Property:datasetCreator}>,href="https://www.w3.org/TR/2018/WD-vocab-dcat-2-20181016/#Property:dataset_creator"]
+"Property: was generated by"[label = <{Property: was generated by}>,href="https://www.w3.org/TR/2018/WD-vocab-dcat-2-20181016/#Property:dataset_wasgeneratedby"]
+"Property: resource relation"[label = <{Property: resource relation}>,href="https://www.w3.org/TR/2018/WD-vocab-dcat-2-20181016/#Property:resource_relation"]
+"Property:media_type"[label = <{Property:media_type}>,href="https://www.w3.org/TR/2018/WD-vocab-dcat-2-20181016/#Property:distribution_media_type"]
+"Property: conforms to"[label = <{Property:media_type}>,href="https://www.w3.org/TR/2018/WD-vocab-dcat-2-20181016/#Property:distribution_conformsto"]
+"dcat:mediaType"[label = <{dcat:mediaType}>,href="https://www.w3.org/TR/2018/WD-vocab-dcat-2-20181016/#Property:distribution_media_type"]
+"Quality information"[label = <{Quality information}>,href="https://www.w3.org/TR/2018/WD-vocab-dcat-2-20181016/#quality-information"]
+"Class: Catalogued resource"[label = <{Class: Catalogued resource}>,href="https://www.w3.org/TR/2018/WD-vocab-dcat-2-20181016/#Class:Resource"]
+"Class: Data service"[label = <{Class: Data service}>,href="https://www.w3.org/TR/2018/WD-vocab-dcat-2-20181016/#Class:Data_Service"]
+"Class: Data distribution service"[label = <{Class: Data service}>,href="https://www.w3.org/TR/2018/WD-vocab-dcat-2-20181016/#Class:Data_Distribution_Service"]
+"Class: Discovery service"[label = <{Class: Discovery service}>,href="https://www.w3.org/TR/2018/WD-vocab-dcat-2-20181016/#Class:Discovery_Service"]
+"Class: Dataset"[label = <{Class: Dataset}>,href="https://www.w3.org/TR/2018/WD-vocab-dcat-2-20181016/#Class:Dataset"]
+"Class: Distribution"[label = <{Class: Distribution}>,href="https://www.w3.org/TR/2018/WD-vocab-dcat-2-20181016/#Class:Distribution"]
+"Property: theme/category"[label = <{Class: Distribution}>,href="https://www.w3.org/TR/2018/WD-vocab-dcat-2-20181016/#Property:resource_theme"]
+"Property: type/genre"[label = <{Property: type/genre}>,href="https://www.w3.org/TR/2018/WD-vocab-dcat-2-20181016/#Property:resource_type"]
+"Property: keyword/tag"[label = <{Property: keyword/tag}>,href="https://www.w3.org/TR/2018/WD-vocab-dcat-2-20181016/#Property:resource_keyword"]
+"Property: contact point"[label = <{Property: contact point}>,href="https://www.w3.org/TR/2018/WD-vocab-dcat-2-20181016/#Property:resource_contact_point"]
+"Property: landing page"[label = <{Property: landing page}>,href="https://www.w3.org/TR/2018/WD-vocab-dcat-2-20181016/#Property:resource_landing_page"]
+"Property: vann:usageNote"[label = <{Property: vann:usageNote}>,href="http://vocab.org/vann/#usageNote"]
+
+
+###Relating Githib Issues to draft documents
+"#61" -> "Property:datasetCreator" [label="DCAT recommendation"]
+"#71" -> "Property: was generated by" [label="DCAT recommendation"]
+"#253" -> "Property: resource relation" [label="DCAT recommendation"]
+"#127" -> "Property:media_type" [label="DCAT recommendation"]
+"#55" -> "Property: conforms to" [label="DCAT recommendation"]
+"#170" -> "dcat:mediaType" [label="DCAT recommendation"]
+{"#57", "#58"} -> "Quality information" [label="DCAT recommendation"]
+{"#116", "#172"} -> "Class: Catalogued resource" [label="DCAT recommendation"]
+"#172" -> "Class: Data service" [label="DCAT recommendation"]
+{"#56", "#172"} -> "Class: Data distribution service" [label="DCAT recommendation"]
+"#172" -> "Class: Discovery service" [label="DCAT recommendation"]
+"#98" -> "Class: Dataset" [label="DCAT recommendation"]
+"#52" -> "Class: Distribution" [label="DCAT recommendation"]
+"#123" -> "Property: theme/category" [label="DCAT recommendation"]
+"#64" -> "Property: type/genre" [label="DCAT recommendation"]
+"#121" -> "Property: keyword/tag" [label="DCAT recommendation"]
+"#95" -> "Property: contact point" [label="DCAT recommendation"]
+"#122" -> "Property: landing page" [label="DCAT recommendation"]
+"#233" -> "Property: vann:usageNote" [label="DCAT recommendation"]
+
+
+###Relating requirements to github issues
+"6.1.1" -> "#53"
+"6.6.3" -> "#61"
+"6.3.5" -> "#71"
+"6.5.2" -> "#55"
+"6.3.7" -> "#57"
+"6.3.6" -> "#58"
+"6.5.3" -> "#56"
+
+
+
+
+
+### Grouping of Requirements
+#"Requirements" -> {"6.1", "6.2", "6.3", "6.4", "6.5", "6.6", "6.7", "6.8", "6.9", "6.10"}
+{"6.1.1", "6.1.2", "6.1.3"} -> "6.1" [label="skos:broader"]
+{"6.2.1", "6.2.2", "6.2.3", "6.2.4", "6.2.5"} -> "6.2" [label="skos:broader"]
+{"6.3.1", "6.3.2", "6.3.3", "6.3.4", "6.3.5", "6.3.6", "6.3.7"} -> "6.3" [label="skos:broader"]
+{"6.4.1", "6.4.2", "6.4.3", "6.4.4", "6.4.5"} -> "6.4" [label="skos:broader"]
+{"6.5.1", "6.5.2", "6.5.3", "6.5.4", "6.5.5"} -> "6.5" [label="skos:broader"]
+{"6.6.1", "6.6.2", "6.6.3"} -> "6.6" [label="skos:broader"]
+{"6.7.1", "6.7.2", "6.7.3", "6.7.4", "6.7.5"} -> "6.7" [label="skos:broader"]
+{"6.8.1", "6.8.2", "6.8.3", "6.8.4"} -> "6.8"  [label="skos:broader"]
+{"6.9.1", "6.9.2", "6.9.3"} -> "6.9" [label="skos:broader"]
+{"6.10.1", "6.10.2", "6.10.3"} -> "6.10" [label="skos:broader"]
+
+
+### UseCase to Requirement
+#"UseCases" -> {"5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8", "5.9", "5.10", "5.11", "5.12", "5.13", "5.14", "5.15", "5.16", "5.17", "5.18", "5.19", "5.20", "5.21", "5.22", "5.23", "5.24", "5.25", "5.26", "5.27", "5.28", "5.29", "5.30", "5.31", "5.32", "5.33", "5.34", "5.35", "5.36", "5.37", "5.38", "5.39", "5.40", "5.41", "5.42", "5.43", "5.44", "5.45", "5.46", "5.47", "5.48", "5.49", "5.50" }
+"5.1" -> "6.5.5"
+"5.2" -> {"6.8.1", "6.8.2", "6.8.3"}
+"5.3" -> "6.8.1"
+"5.4" -> {"6.2.1", "6.2.2", "6.2.3", "6.2.4", "6.2.5"}
+"5.5" -> "6.8.1"
+"5.6" -> {"6.5.2", "6.5.3", "6.5.4"}
+"5.7" -> "6.4.2"
+"5.8" -> "6.4.1"
+"5.9" -> {"6.3.1", "6.3.3", "6.7.3"}
+"5.10" -> "6.7.2"
+"5.11" -> {"6.1.1", "6.1.2", "6.1.3"}
+"5.12" -> "6.3.3"
+"5.13" -> "6.3.3"
+"5.14" -> "6.3.6"
+"5.15" -> "6.3.6"
+"5.16" -> "6.3.6"
+"5.17" -> {"6.5.2", "6.7.1"}
+"5.18" -> {"6.5.3", "6.5.4"}
+"5.19" -> {"6.10.2", "6.10.3"}
+"5.20" -> "6.4.1"
+"5.21" -> {"6.3.6", "6.5.3"}
+"5.22" -> {"6.3.6", "6.5.2"}
+"5.23" -> "6.3.6"
+"5.24" -> "?"
+"5.25" -> {"6.7.4", "6.7.5"}
+"5.26" -> "?"
+"5.27" -> "6.4.5"
+"5.28" -> "6.4.3"
+"5.29" -> "6.4.4"
+"5.30" -> "6.8.3"
+"5.31" -> {"6.3.3", "6.3.4", "6.3.5"}
+"5.32" -> "6.6.1"
+"5.33" -> {"6.3.2", "6.4.2", "6.5.2"}
+"5.34" -> "6.5.1"
+"5.35" -> "6.6.3"
+"5.36" -> {"6.9.1", "6.9.2"}
+"5.37" -> "6.4.2"
+"5.38" -> "?"
+"5.39" -> "?"
+"5.40" -> "6.9.3"
+"5.41" -> "6.8.2"
+"5.42" -> "6.10.1"
+"5.43" -> "6.8.1"
+"5.44" -> {"6.2.1", "6.2.3"}
+"5.45" -> "6.3.7"
+"5.46" -> {"6.4.2", "6.8.2", "6.8.4"}
+"5.47" -> "6.6.1"
+"5.48" -> "6.8.1"
+"5.49" -> {"6.3.5", "6.6.2"}
+"5.50" -> {"6.2.2", "6.2.5"}
+"5.51" -> "6.5.4"
+
+}

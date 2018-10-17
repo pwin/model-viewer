@@ -1,0 +1,100 @@
+digraph DCAT_v2_summary{
+ratio = "auto"
+
+node [
+fontname = Helvetica
+fontsize = 8
+shape = "record"
+]
+
+edge [
+arrowtail = "empty"
+arrowhead = "vee"
+fontsize=8
+fontcolor=red
+fontname=Helvetica
+]
+
+
+foafAgent[
+label = "{foaf:Agent}"
+]
+
+dcatCatalog [
+label = "{dcat:Catalog|+ dct:license\l+ dct:rights\l+ foaf:homepage\l\l::dcat:Dataset\l+ dct:accrualPeriodicity\l+ dct:spatial\l+ dct:temporal\l+ prov:wasGeneratedBy\l\l::dcat:Resource\l+ dcat:contactPoint\l+ dcat:keyword\l+ dcat:landingPage\l+ dct:conformsTo\l+ dct:creator\l+ dct:description\l+ dct:identifier\l+ dct:issued\l+ dct:language\l+ dct:modified\l+ dct:relation\l+ dct:title\l+ dct:type}"
+]
+
+dcatCatalogRecord [
+label = "{dcat:CatalogRecord|+ dct:description\l+ dct:issued\l+ dct:modified\l+ dct:title\l}"
+]
+
+dcatDataset [
+label = "{dcat:Dataset|+ dct:accrualPeriodicity\l+ dct:spatial\l+ dct:temporal\l+ prov:wasGeneratedBy\l\l::dcat:Resource\l+ dcat:contactPoint\l+ dcat:keyword\l+ dcat:landingPage\l+ dct:conformsTo\l+ dct:creator\l+ dct:description\l+ dct:identifier\l+ dct:issued\l+ dct:language\l+ dct:modified\l+ dct:relation\l+ dct:title\l+ dct:type}"
+]
+
+dcatDataService [
+label = "{dcat:DataService|+ dcat:endpointDescription\l+ dcat:endpointURL\l+ dct:accessRights\l+ dct:license\l\l::dcat:Resource\l+ dcat:contactPoint\l+ dcat:keyword\l+ dcat:landingPage\l+ dct:conformsTo\l+ dct:creator\l+ dct:description\l+ dct:identifier\l+ dct:issued\l+ dct:language\l+ dct:modified\l+ dct:relation\l+ dct:title\l+ dct:type}"
+]
+
+dcatResource [
+label = "{dcat:Resource|+ dcat:contactPoint\l+ dcat:keyword\l+ dcat:landingPage\l+ dct:conformsTo\l+ dct:creator\l+ dct:description\l+ dct:identifier\l+ dct:issued\l+ dct:language\l+ dct:modified\l+ dct:relation\l+ dct:title\l+ dct:type}"
+]
+
+dcatDistribution [
+label="{dcat:Distribution|+ dcat:accessURL\l+ dcat:byteSize\l+ dcat:downloadURL\l+ dcat:mediaType\l
++ dct:conformsTo\l+ dct:description\l+ dct:format\l+ dct:issued\l+ dct:license\l+ dct:modified\l+ dct:rights\l+ dct:title}"
+]
+
+dcatDataDistributionService [
+label="{dcat:DistributionService}"
+]
+
+dcatDiscoveryService [
+label="{dcat:DiscoveryService}"
+]
+
+
+skosConceptScheme [
+label="{skos:ConceptScheme}"
+]
+
+skosConcept [
+label="{skos:Concept}"
+]
+
+
+dcatCatalog -> foafAgent [label="dct:publisher"]
+edge [headlabel = "1..*"]
+dcatCatalog -> dcatCatalogRecord [label="dct:record"]
+edge [headlabel = "0..*"]
+dcatCatalog -> dcatCatalog [label="dcat:catalog"]
+dcatCatalog -> dcatDataset [label="dcat:dataset"]
+edge [arrowhead = "o" headlabel=""]
+dcatCatalog -> dcatDataset
+edge [arrowhead="vee"]
+dcatDataset -> dcatDataset [label="prov:wasDerivedFrom"]
+dcatCatalogRecord -> foafAgent [label="dct:contributor"]
+dcatCatalog -> skosConceptScheme [label="dcat:themeTaxonomy"]
+skosConcept -> skosConceptScheme [label="skos:inScheme"]
+edge [headlabel = "1..*"]
+dcatCatalog -> dcatResource [label="dct:hasPart"]
+edge [headlabel = "0..*"]
+dcatResource -> skosConcept [label="dcat:theme"]
+dcatCatalog -> dcatDataService [label="dcat:service"]
+edge [headlabel=""]
+dcatResource -> foafAgent [label="prov:wasAttributedTo"]
+dcatResource -> foafAgent [label="dct:publisher"]
+d1 [shape=point,width=0.01,height=0.01]
+{dcatDataset, dcatDataService} -> d1 [dir="none"]
+edge [arrowhead = "o" headlabel=""]
+d1 -> dcatResource
+edge [arrowhead="vee" headlabel="0..*"]
+dcatDataset -> dcatDistribution [label="dcat:distribution"]
+dcatDistribution -> dcatDataDistributionService [label="dcat:accessService"]
+edge [arrowhead="vee" headlabel="1..*"]
+dcatDataDistributionService -> dcatDataset [label="dcat:servesDataset"]
+edge [arrowhead = "o" headlabel=""]
+dcatDataDistributionService -> dcatDataService
+dcatDiscoveryService -> dcatDataDistributionService
+
+}
