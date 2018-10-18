@@ -171,7 +171,7 @@ subgraph useCases {
 "Quality information"[label = <{Quality information}>,href="https://www.w3.org/TR/2018/WD-vocab-dcat-2-20181016/#quality-information"]
 "Class: Catalogued resource"[label = <{Class: Catalogued resource}>,href="https://www.w3.org/TR/2018/WD-vocab-dcat-2-20181016/#Class:Resource"]
 "Class: Data service"[label = <{Class: Data service}>,href="https://www.w3.org/TR/2018/WD-vocab-dcat-2-20181016/#Class:Data_Service"]
-"Class: Data distribution service"[label = <{Class: Data service}>,href="https://www.w3.org/TR/2018/WD-vocab-dcat-2-20181016/#Class:Data_Distribution_Service"]
+"Class: Data distribution service"[label = <{Class: Data distribution service}>,href="https://www.w3.org/TR/2018/WD-vocab-dcat-2-20181016/#Class:Data_Distribution_Service"]
 "Class: Discovery service"[label = <{Class: Discovery service}>,href="https://www.w3.org/TR/2018/WD-vocab-dcat-2-20181016/#Class:Discovery_Service"]
 "Class: Dataset"[label = <{Class: Dataset}>,href="https://www.w3.org/TR/2018/WD-vocab-dcat-2-20181016/#Class:Dataset"]
 "Class: Distribution"[label = <{Class: Distribution}>,href="https://www.w3.org/TR/2018/WD-vocab-dcat-2-20181016/#Class:Distribution"]
