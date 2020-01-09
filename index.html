@@ -8,6 +8,7 @@
         <script type="text/javascript" src="js/fabric.js/fabric.min.js"></script>
         <script type="text/javascript" src="js/svg-pan-zoom/svg-pan-zoom.min.js"></script>
         <script type="text/javascript" src="js/viz.js/viz.js"></script>
+        <script type="text/javascript" src="js/js/getURLParams.js"></script>
     </head>
 <body>
       <div id="app">
@@ -52,7 +53,7 @@
                         </label>
                         <button onClick="driver(document.querySelector('#datafile select').value)">Change File</button>
                         <label id="url">URL:
-                        <input  value="https://raw.githubusercontent.com/pwin/model-viewer/master/dot_files/DCAT_v2_summary.dot"></input>
+                        <input id="urlVal" value="https://raw.githubusercontent.com/pwin/model-viewer/master/dot_files/DCAT_v2_summary.dot"></input>
                       </label>
                         <button onClick="load_url(document.querySelector('#url input').value)">Load URL</button>
                         <a href="https://github.com/pwin/model-viewer" target="_repo">[repo]</a>
@@ -131,8 +132,19 @@ function load_url(url){
   }
 }
 
-makeCorsRequest(url1 + url);
-updateGraph();
+var dot = getUrlParameter('dot');
+if (dot && isValidURL(dot) && confirm("do you want to change the data source to \n" + dot + "\n?")) {
+ 
+    document.getElementById("urlVal").value  = dot
+    makeCorsRequest(dot);
+    updateGraph();
+}
+else
+{
+ makeCorsRequest(url1 + url);
+ updateGraph(); 
+}
+
 
 
 </script>
